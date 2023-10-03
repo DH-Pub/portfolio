@@ -2,11 +2,18 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
 import { WEBLINKS } from "./const/WebLinks";
 import HomePage from "./pages/HomePage";
+import Layout from "./layout/Layout";
 
 const router = createBrowserRouter([
   {
     path: WEBLINKS.HOME,
-    element: <HomePage />,
+    element: <Layout />,
+    children: [
+      {
+        path: WEBLINKS.HOME,
+        element: <HomePage />,
+      },
+    ],
   },
 ]);
 

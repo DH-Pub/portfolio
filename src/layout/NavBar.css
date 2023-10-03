@@ -1,0 +1,119 @@
+.header {
+  position: fixed;
+  width: 100%;
+  padding: 0.5rem 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+
+  user-select: none;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(0, 0, 0, 0.3); */
+  backdrop-filter: blur(50px);
+  z-index: -1;
+}
+.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(250, 250, 250, 0.4),
+    transparent
+  );
+  transition: 0.5s;
+}
+.header:hover::after {
+  left: 100%;
+}
+
+.logo {
+  margin-left: 10px;
+  font-size: 2rem;
+  /* text-decoration: none; */
+  font-weight: 700;
+  color: var(--main-color);
+}
+
+/* navbar------------------------ */
+#menu {
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.navbar a {
+  margin: 0 1rem;
+}
+
+.header .icon {
+  font-size: 2.8rem;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  right: 5%;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0.5rem;
+  }
+  .header .icon {
+    display: inline-flex;
+  }
+  #menu:checked ~ .icon #menu-open {
+    display: none;
+  }
+
+  .icon #menu-close {
+    display: none;
+  }
+  #menu:checked ~ .icon #menu-close {
+    display: block;
+  }
+
+  .navbar {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: 0.3s ease;
+  }
+  #menu:checked ~ .navbar {
+    height: calc(5rem * 5);
+  }
+
+  .navbar a {
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    transform: translateY(-50px);
+    transition: 0.3s ease;
+  }
+  #menu:checked ~ .navbar a {
+    transform: translateY(0);
+    transition-delay: calc(0.1s * var(--drop-delay) / 2);
+  }
+}

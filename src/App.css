@@ -18,3 +18,47 @@ body {
   color: var(--text-color);
   overflow-x: hidden;
 }
+
+section {
+  min-height: 100vh;
+  padding: 1rem 5% 5rem;
+}
+
+section.home {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(min(30rem, 100%), 1fr));
+}
+
+.home-content h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 0.3;
+}
+
+.home-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.home-content p {
+  font-size: 1.5rem;
+}
+
+.home .profession-container {
+  /* position: absolute; */
+  /* top: 50%; */
+  /* right: 0; */
+  /* transform: translateY(-50%); */
+  margin: 0 auto;
+  width: 25rem;
+  aspect-ratio: 1;
+  background: red;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.home .profession-box {
+  position: absolute;
+}

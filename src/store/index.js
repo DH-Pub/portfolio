@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
-import { uiModeReducer } from "./slices/darkModeSlice";
+import { uiModeReducer, setMode, clearMode, selectUiMode } from "./slices/darkModeSlice";
 
 export const store = configureStore({
   reducer: {
@@ -13,3 +13,5 @@ export const store = configureStore({
 });
 
 setupListeners(store.dispatch);
+
+export { setMode, clearMode, selectUiMode };

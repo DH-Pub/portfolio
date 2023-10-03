@@ -1,3 +1,4 @@
+import { useDispatch, useSelector } from "react-redux";
 import "./NavBar.css";
 import {
   HiMenu,
@@ -5,14 +6,37 @@ import {
   HiOutlineSun,
   HiOutlineX,
 } from "react-icons/hi";
+import { selectUiMode, setMode } from "../store";
 
 export default function NavBar() {
+  const dispatch = useDispatch();
+  const uiMode = useSelector(selectUiMode);
+  let uiModeButton = <HiOutlineMoon />;
+
+  const handleModeChange = () => {
+    if (uiMode === "dark") {
+      dispatch(setMode("light"));
+    } else if (uiMode === "light") {
+      dispatch(setMode("dark"));
+    }
+  };
+
+  if (uiMode === "light") {
+    uiModeButton = <HiOutlineMoon />;
+  } else if (uiMode === "dark") {
+    uiModeButton = <HiOutlineSun />;
+  }
+
   return (
     <header className="header">
       <a href="/" className="logo">
         Hung
       </a>
 
+      <button className="items-center ui-mode" onClick={handleModeChange}>
+        {uiModeButton}
+      </button>
+      
       <input id="menu" type="checkbox" />
       <label htmlFor="menu" className="icon">
         <HiMenu id="menu-open" />
@@ -20,12 +44,6 @@ export default function NavBar() {
       </label>
 
       <nav className="navbar">
-        <button className="items-center">
-          <HiOutlineMoon />
-        </button>
-        <button className="items-center">
-          <HiOutlineSun />
-        </button>
         {/* style="--i:0" */}
         <a href="/#start" style={{ "--drop-delay": 0 }}>
           Start

@@ -1,0 +1,33 @@
+.portrait-container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 25rem;
+  aspect-ratio: 1;
+  overflow: hidden;
+  /* pointer-events: none; */
+
+  border-radius: 0 0 100vw 100vw;
+  aspect-ratio: 1/1.22;
+  display: grid;
+  align-items: end;
+}
+
+.portrait-circle {
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1;
+  background: purple;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.person-img {
+  position: relative;
+  max-width: 100%;
+  transform: scale(0.8) translateY(20px);
+  transition: transform 250ms ease-in-out;
+}
+
+.portrait-container:hover .person-img {
+  transform: scale(0.9) translateY(-20px);
+}

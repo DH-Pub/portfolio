@@ -10,7 +10,7 @@ export default function HomePage() {
   return <div>
     <section className="home" id="start">
       <div className="home-content">
-        <h3>Hello, I am</h3>
+        <h3>Hello, I'm</h3>
         <h1>Dao Bui Quang Hung</h1>
         <p>I'm a Web Developer.</p>
 

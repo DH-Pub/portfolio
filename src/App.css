@@ -62,3 +62,18 @@ section.home {
   color: var(--main-color);
   opacity: 1;
 }
+
+/* ABOUT ------------------------------------------ */
+.about {
+  display: grid;
+  place-items: center;
+  align-items: center;
+}
+
+.about-content {
+  justify-content: center;
+}
+
+.about-content p {
+  font-size: 3rem;
+}

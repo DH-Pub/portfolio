@@ -8,11 +8,11 @@ export default function HomePage() {
     document.title = "Hung's Portfolio"
   }, []);
   return <div>
-    <section className="home">
+    <section className="home" id="start">
       <div className="home-content">
         <h3>Hello, I am</h3>
         <h1>Dao Bui Quang Hung</h1>
-        <p>I am a Web Developer.</p>
+        <p>I'm a Web Developer.</p>
 
         <div className="links-icons mt-4">
           <a href={WEBLINKS.GITHUB} target="_blank" rel="noreferrer">
@@ -24,8 +24,13 @@ export default function HomePage() {
         </div>
       </div>
 
-
       <PopOutImage />
+    </section>
+
+    <section className="about" id="about">
+      <div className="about-content">
+        <p>I am an aspiring web developer with a flair for turning creative ideas into interactive online experiences. I am committed to crafting visually appealing and user-friendly websites. I am eager to tackle new challenges and improve my knowledge.</p>
+      </div>
     </section>
   </div>;
 }

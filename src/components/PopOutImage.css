@@ -7,7 +7,7 @@
   /* pointer-events: none; */
 
   border-radius: 0 0 100vw 100vw;
-  aspect-ratio: 1/1.22;
+  aspect-ratio: 1/1.25;
   display: grid;
   align-items: end;
 }
@@ -24,10 +24,10 @@
 .person-img {
   position: relative;
   max-width: 100%;
-  transform: scale(0.8) translateY(20px);
+  transform: scale(0.8) translateY(30px);
   transition: transform 250ms ease-in-out;
 }
 
 .portrait-container:hover .person-img {
-  transform: scale(0.9) translateY(-20px);
+  transform: scale(0.9) translateY(-25px);
 }

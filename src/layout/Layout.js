@@ -9,6 +9,7 @@ class Layout extends Component {
     let navHeight =
       document.querySelector(".header")?.clientHeight + "px" || "5rem";
     document.querySelector("main").style.marginTop = navHeight;
+    document.documentElement.style.setProperty("--scroll-padding", navHeight);
   }
   render() {
     return (

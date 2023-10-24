@@ -1,6 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
+  "homepage": "https://dh-pub.github.io/portfolio/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -57,6 +58,5 @@
     "@babel/preset-env": "7.23.2",
     "@babel/preset-react": "7.22.15",
     "tailwindcss": "^3.3.3"
-  },
-  "homepage": "https://dh-pub.github.io/portfolio/"
+  }
 }
